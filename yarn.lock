@@ -5869,7 +5869,7 @@ react-native-progress@^4.1.2:
     "@react-native-community/art" "^1.1.2"
     prop-types "^15.7.2"
 
-react-native-reanimated@^1.13.2:
+react-native-reanimated@^1.13.2, react-native-reanimated@^1.4.0:
   version "1.13.2"
   resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.13.2.tgz#1ae5457b24b4913d173a5a064bb28eae7783d293"
   integrity sha512-O+WhgxSjOIzcVdAAvx+h2DY331Ek1knKlaq+jsNLpC1fhRy9XTdOObovgob/aF2ve9uJfPEawCx8381g/tUJZQ==
@@ -5905,6 +5905,13 @@ react-native-svg@^12.1.0:
   dependencies:
     css-select "^2.1.0"
     css-tree "^1.0.0-alpha.39"
+
+react-native-ticker@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-ticker/-/react-native-ticker-3.2.0.tgz#327dd8dc8254eedf2760a5685c07668231ec1a57"
+  integrity sha512-XdqXCjXhzOcObfAH3GkhG33f0J7UBM3YKTemE+jeKnDZ+qpXj4em/USD7nbfjhApK+U/BgMz5ujquGw2hTZLoA==
+  dependencies:
+    react-native-reanimated "^1.4.0"
 
 react-native@0.63.4:
   version "0.63.4"
