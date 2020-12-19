@@ -17,8 +17,12 @@ class SplashScreen extends React.Component {
             this.setState({ number: this.state.number + interval })
             if (number + interval === 100) {
                 clearInterval(this.handle)
+                this.props.navigation.navigate('Slide')
             }
-        }, 250)
+        }, 200)
+    }
+    componentWillUnmount() {
+        clearInterval(this.handle)
     }
     render() {
         return (
@@ -30,7 +34,7 @@ class SplashScreen extends React.Component {
                     <View style={{ height: 80, marginVertical: 23, }}>
                         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                             <Ticker textStyle={{ fontSize: normalize(14), color: 'rgb(126,126,126)' }}>
-                                {this.state.number}
+                                {this.state.number} %
                             </Ticker>
                             {/* <Text style={{ fontSize: normalize(15), color: 'rgb(126,126,126)' }}>99%</Text> */}
                         </View>
