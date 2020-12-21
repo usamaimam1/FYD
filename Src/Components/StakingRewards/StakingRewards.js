@@ -1,6 +1,6 @@
 import { Icon } from 'native-base'
 import React from 'react'
-import { View, Text, ImageBackground, TouchableOpacity, SectionList } from 'react-native'
+import { View, Text, ImageBackground, TouchableOpacity, SectionList, Image } from 'react-native'
 import { FlatList } from 'react-native-gesture-handler'
 import { color } from 'react-native-reanimated'
 import { connect } from 'react-redux'
@@ -13,14 +13,14 @@ const values = [
         data: [0, 1, 2, 3, 4, 5]
     },
     {
-        date: "3 June", wallet_name: "Wallet Name", balance: "Balance",
+        date: "4 June", wallet_name: "Wallet Name", balance: "Balance",
         data: [0, 1, 2, 3, 4, 5]
     },
     {
-        date: "3 June", wallet_name: "Wallet Name", balance: "Balance",
+        date: "5 June", wallet_name: "Wallet Name", balance: "Balance",
         data: [0, 1, 2, 3, 4, 5]
     }
-]
+].reverse()
 class StakingRewards extends React.Component {
     constructor(props) {
         super(props)
@@ -40,8 +40,10 @@ class StakingRewards extends React.Component {
                             </TouchableOpacity>
                         </View>
                         {/* <Text style={styles.HeaderLogoText}>FYD</Text> */}
-                        <Icon name="unlock" type="Feather" style={[styles.HeaderIcon]} />
-                        <Icon name="piggy-bank" type="FontAwesome5" style={[styles.HeaderIcon, { color: 'rgb(224,78,4)' }]} />
+                        <Image style={[styles.HeaderIcon, { width: styles.HeaderIcon.fontSize - 6, height: styles.HeaderIcon.fontSize }]} source={require('../../../Design/Images/lock_open.png')} />
+                        {/* <Icon name="unlock" type="Feather" style={[styles.HeaderIcon]} /> */}
+                        <Image style={[styles.HeaderIcon, { width: styles.HeaderIcon.fontSize, height: styles.HeaderIcon.fontSize }]} source={require('../../../Design/Images/Piggybank_orange.png')} />
+                        {/* <Icon name="piggy-bank" type="FontAwesome5" style={[styles.HeaderIcon, { color: 'rgb(224,78,4)' }]} /> */}
                         <Icon name="wifi" type="FontAwesome" style={[styles.HeaderIcon, { color: 'rgb(255,127,0)' }]} />
                         <Icon name="check" type="FontAwesome" style={[styles.HeaderIcon, { color: 'rgb(115,255,107)' }]} />
                     </View>
@@ -68,7 +70,7 @@ class StakingRewards extends React.Component {
                                     console.log(item)
                                     return (
                                         <TouchableOpacity onPress={() => { }} style={{ flex: 1, marginVertical: 10, borderBottomColor: 'white', borderBottomWidth: 0, flexDirection: 'row', alignItems: 'center', paddingHorizontal: 10, }}>
-                                            <Icon name="piggy-bank" type="FontAwesome5" style={{ fontSize: normalize(22), color: 'rgb(224,78,4)', paddingHorizontal: 15, borderWidth: 0, borderColor: 'white' }} />
+                                            <Image style={{ width: normalize(24,), height: normalize(24), marginHorizontal: 15 }} source={require('../../../Design/Images/Piggybank_orange.png')} />
                                             <View style={{ flex: 1, justifyContent: 'center', borderBottomWidth: 0.4, borderBottomColor: 'rgb(126,126,126)', paddingVertical: 12, marginLeft: 20, }}>
                                                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                                     <Text numberOfLines={1} style={{ flex: 1, color: 'white', fontSize: normalize(14) }}>General Address</Text>

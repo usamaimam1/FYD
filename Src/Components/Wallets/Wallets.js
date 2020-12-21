@@ -1,6 +1,6 @@
 import { Icon } from 'native-base'
 import React from 'react'
-import { View, Text, ImageBackground, TouchableOpacity } from 'react-native'
+import { View, Text, ImageBackground, TouchableOpacity, Image } from 'react-native'
 import { FlatList } from 'react-native-gesture-handler'
 import { color } from 'react-native-reanimated'
 import { connect } from 'react-redux'
@@ -25,8 +25,10 @@ class WalletsScreen extends React.Component {
                             </TouchableOpacity>
                         </View>
                         {/* <Text style={styles.HeaderLogoText}>FYD</Text> */}
-                        <Icon name="unlock" type="Feather" style={[styles.HeaderIcon]} />
-                        <Icon name="piggy-bank" type="FontAwesome5" style={[styles.HeaderIcon, { color: 'rgb(224,78,4)' }]} />
+                        <Image style={[styles.HeaderIcon, { width: styles.HeaderIcon.fontSize - 6, height: styles.HeaderIcon.fontSize }]} source={require('../../../Design/Images/lock_open.png')} />
+                        {/* <Icon name="unlock" type="Feather" style={[styles.HeaderIcon]} /> */}
+                        <Image style={[styles.HeaderIcon, { width: styles.HeaderIcon.fontSize, height: styles.HeaderIcon.fontSize }]} source={require('../../../Design/Images/Piggybank_orange.png')} />
+                        {/* <Icon name="piggy-bank" type="FontAwesome5" style={[styles.HeaderIcon, { color: 'rgb(224,78,4)' }]} /> */}
                         <Icon name="wifi" type="FontAwesome" style={[styles.HeaderIcon, { color: 'rgb(255,127,0)' }]} />
                         <Icon name="check" type="FontAwesome" style={[styles.HeaderIcon, { color: 'rgb(115,255,107)' }]} />
                     </View>
@@ -44,7 +46,8 @@ class WalletsScreen extends React.Component {
                                 data={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
                                 renderItem={({ item, index, separator }) =>
                                     <TouchableOpacity onPress={() => { }} style={{ flex: 1, marginVertical: 10, borderBottomColor: 'white', borderBottomWidth: 0, flexDirection: 'row', alignItems: 'center', paddingHorizontal: 10, }}>
-                                        <Icon name="wallet" type="AntDesign" style={{ fontSize: normalize(22), color: 'white', paddingHorizontal: 15, borderWidth: 0, borderColor: 'white' }} />
+                                        <Image style={{ width: normalize(25), height: normalize(22), marginHorizontal: 15, }} source={require('../../../Design/Images/wallet_slide.png')} />
+                                        {/* <Icon name="wallet" type="AntDesign" style={{ fontSize: normalize(22), color: 'white', paddingHorizontal: 15, borderWidth: 0, borderColor: 'white' }} /> */}
                                         <View style={{ flex: 1, justifyContent: 'center', borderBottomWidth: 0.4, borderBottomColor: 'rgb(126,126,126)', paddingVertical: 12, marginLeft: 20, }}>
                                             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                                 <Text numberOfLines={1} style={{ flex: 1, color: 'white', fontSize: normalize(14) }}>General Address</Text>

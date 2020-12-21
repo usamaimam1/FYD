@@ -29,13 +29,19 @@ class SplashScreen extends React.Component {
             <View style={{ flex: 1, backgroundColor: 'rgb(30,30,30)' }}>
                 <ImageBackground style={{ flex: 1 }} source={require('../../../Design/Images/Background.png')}>
                     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                        <Text style={{ fontSize: normalize(60), color: 'rgb(126,126,126)', fontWeight: "500" }}>FYD</Text>
+                        <Image source={require('../../../Design/Images/Splash_logo.png')} style={{ width: 2.522 * 90, height: 90 }} />
+                        {/* <Text style={{ fontSize: normalize(60), color: 'rgb(126,126,126)', fontWeight: "500" }}>FYD</Text> */}
                     </View>
                     <View style={{ height: 80, marginVertical: 23, }}>
                         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                            <Ticker textStyle={{ fontSize: normalize(14), color: 'rgb(126,126,126)' }}>
-                                {this.state.number} %
+                            {this.state.number >= 95 ?
+                                <Text style={{ fontSize: normalize(14), color: 'rgb(126,126,126)' }}>
+                                    {this.state.number} %
+                                </Text> :
+                                <Ticker textStyle={{ fontSize: normalize(14), color: 'rgb(126,126,126)' }}>
+                                    {this.state.number} %
                             </Ticker>
+                            }
                             {/* <Text style={{ fontSize: normalize(15), color: 'rgb(126,126,126)' }}>99%</Text> */}
                         </View>
                         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
